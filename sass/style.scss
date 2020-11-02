@@ -1,0 +1,169 @@
+$primary: whitesmoke; //primary
+$secondary:#fc4445; //$secondary
+$light: #F2527D;
+$dark: #262326;
+$gray: #404040;
+$jumbotron-bg : #262326; //jumbotron background
+$display1-size : 5rem;
+$display2-size : 4rem;
+$display3-size : 3rem;
+$display4-size : 2rem;
+$headings-font-family : "Prompt";
+$secondary-font-family : "Raleway";
+$spacer: 2rem !default; //margin and padding overall spacing size
+
+@import "../bootstrap-4.5.3/scss/bootstrap.scss";
+@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@500;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-image: image('images/blue.jpg');
+}
+
+html,body
+{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden;
+}
+
+h1{
+  font-weight: 800;
+  font-family: $headings-font-family;
+
+}
+
+p{
+  font-size: 10px;
+}
+
+
+// gradient section
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+// gradient section ends
+
+
+
+// card section
+.card{ transition: all .2s ease-in-out; }
+.card:hover { transform: scale(1.1); }
+.card{
+border: none;
+}
+// card section ends
+
+
+// form section
+.search_input{
+  border: none;
+}
+
+.formGenre{
+  opacity:80%;
+}
+
+// form section ends
+
+@keyframes move_wave {
+    0% {
+        transform: translateX(0) translateZ(0) scaleY(1)
+    }
+    50% {
+        transform: translateX(-25%) translateZ(0) scaleY(0.55)
+    }
+    100% {
+        transform: translateX(-50%) translateZ(0) scaleY(1)
+    }
+}
+
+
+// wave animation section
+
+.waveWrapper {
+    z-index: -1;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    margin: auto;
+}
+
+
+
+.waveWrapperInner {
+    position: absolute;
+    width: 100%;
+    overflow: hidden;
+    height: 100%;
+    bottom: -1px;
+    background-image: linear-gradient(to top, #4DA0B0 20%, #D39D38 80%);
+}
+.bgTop {
+    opacity: 50%;
+    z-index: 15;
+    opacity: 0.5;
+}
+.bgMiddle {
+    opacity: 50%;
+    z-index: 10;
+    opacity: 0.75;
+}
+.bgBottom {
+    opacity: 50%;
+    z-index: 5;
+}
+.wave {
+    opacity: 50%;
+    position: absolute;
+    left: 0;
+    width: 200%;
+    height: 100%;
+    background-repeat: repeat no-repeat;
+    background-position: 0 bottom;
+    transform-origin: center bottom;
+}
+.waveTop {
+  opacity: 50%;
+    background-size: 50% 100px;
+}
+.waveAnimation .waveTop {
+  animation: move-wave 3s;
+   -webkit-animation: move-wave 3s;
+   -webkit-animation-delay: 1s;
+   animation-delay: 1s;
+}
+.waveMiddle {
+    background-size: 50% 120px;
+}
+.waveAnimation .waveMiddle {
+    animation: move_wave 10s linear infinite;
+}
+.waveBottom {
+    background-size: 50% 100px;
+}
+.waveAnimation .waveBottom {
+    animation: move_wave 15s linear infinite;
+}
+
+// wave animation section ends
+
+.fas{
+  color: whitesmoke;
+}
