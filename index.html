@@ -14,11 +14,25 @@
 
     <main class="">
 
-    <!-- <nav class="navbar navbar-expand-lg navbar-secondary bg-secondary ">
-    </nav> -->
+      <nav>
+        <!-- sort filter-->
+               <div class="col-12 col-sm-12 col-md-10 col-lg-3 col-xl-3 mt-4 text-center">
+                <select class="sortBtn bg-transparent" name="" id="sortBtn">
+                  <option value="">Sort by</option>
+                  <option value="title">Title A-Z</option>
+                  <option value="artist">Artist A-Z</option>
+                  <option value="genre">Genre A-Z</option>
+                  <option value="titleza">Title Z-A</option>
+                  <option value="artistza">Artist Z-A</option>
+                  <option value="genreza">Genre Z-A</option>
 
-      <!-- <div class="jumbotron"> -->
-          <h1 class="text-primary mt-4 formGenre text-center display-3">MC.<img class="img"src="" alt=""> </h1>
+                </select>
+              </div>
+
+      </nav>
+
+
+          <h1 class="text-primary mt-4 formGenre text-center display-3">Music Club.<img class="img"src="" alt=""> </h1>
           <button id="refresh" class="btn refresh-all p-1 mt-3 text-primary m-auto d-block" type="button" name="button">Refresh All</button>
           <div class="container h-100">
            <div class="d-flex justify-content-center h-100 mt-3 ">
@@ -27,6 +41,7 @@
                <a id="keywords" href="#" class="search_icon text-primary p-2"><i class="fas fa-search"></i></a>
              </div>
              </div>
+
 
 
 
@@ -105,7 +120,7 @@
       </div>
     </div>
 
-<footer class=" page-footer ">
+<footer id="sticky-footer" class=" page-footer ">
 
 </footer>
 

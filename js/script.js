@@ -84,7 +84,7 @@ var music = [
         year : 2000,
         photo : 'rap-2.jpg',
         url : 'https://www.youtube.com/embed/_xH8qN6B160' ,
-        keywords :['Born Again', 'born again', 'biggie', 'biggie smalls', 'notorious','rap', '2000']
+        keywords :['Born Again', 'born again',  'biggie smalls', 'notorious','rap', '2000']
       },
 
       {
@@ -241,11 +241,25 @@ var music = [
 // ==========================================================
 // Function call to display all items
 // ==========================================================
-
+$('input[type=checkbox]').prop('checked',false);
 allMusic(); //displays all items on home page
 
 $('#refresh').click(function(){
-  allMusic();
+  music.sort(function(a,b){
+    var itemA = a.id, itemB = b.id;
+
+    if (itemA < itemB){
+      return -1;
+    }
+    if (itemA > itemB){
+      return 1;
+    }
+    console.log(music);
+
+  });
+
+  $('input[type=checkbox]').prop('checked',false);
+  allMusic();//displays all items on home page
 });
 
 
@@ -296,6 +310,7 @@ $('#showChoice').click(function(){
 
 function allMusic(){
   var i = 0;
+  $('#result').text('');
   for (i = 0 ; i < music.length; i++){
 
 
@@ -354,7 +369,6 @@ function allMusic(){
 // ==========================================================
 
 
-
 function filteredMusic(allMusic){
   console.log(allMusic);
   var i,j;
@@ -367,9 +381,7 @@ function filteredMusic(allMusic){
       }//if
     }//for j
   }//for i
-}//filteredCats
-
-
+}//filteredMusic
 
 
 
@@ -378,7 +390,6 @@ function filteredMusic(allMusic){
 // ==========================================================
 
 function displayCards(j){
-  console.log('loud');
   //access properties of objects using index number
   $('#result').append( '<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 mx-auto ">' +
                           '<div class="card p-1 hover-rise mr-2 mx-auto text-primary bg-transparent " style="width: 18rem;">' +
@@ -396,7 +407,7 @@ function displayCards(j){
                   ); //append ends here
 
 
-  }; //displayCards
+  } //displayCards
 
 $('#keywords').click(function(){
 $('#result').text('');
@@ -404,7 +415,7 @@ $('#result').text('');
   console.log(searchItem);
   var i,j;
   for(i = 0 ; i < music.length; i++){
-    console.log(music[i].keywords.length)
+    console.log(music[i].keywords.length);
     for (j = 0; j < music[i].keywords.length; j++){
       console.log(((music[i].keywords[j]).toLowerCase()).includes(searchItem.toLowerCase()));
     if (((music[i].keywords[j]).toLowerCase()).includes(searchItem.toLowerCase()) ) {
@@ -415,7 +426,122 @@ $('#result').text('');
     }
 
   }
-})
+});
+
+
+// ==========================================================
+// Sort by selection
+// ==========================================================
+
+$('#sortBtn').change(function(){
+  $('input[type=checkbox]').prop('checked',false);
+  var sortType = ($('#sortBtn').val()).toLowerCase();
+  console.log(sortType);
+
+
+  if ((sortType === 'title') || (sortType === 'artist') || (sortType === 'genre')) {
+     sortByAscending(sortType);//calling function
+    }
+
+    if ((sortType === 'titleza') || (sortType === 'artistza') || (sortType === 'genreza')) {
+     sortByDescending(sortType);//calling function
+    }
+
+
+
+
+//   // recursive function
+//   music.sort(function(){
+//     // compare 2 consecutive objects name property
+//     var itemA = a.name.toLowerCase(), itemB = b.name.toLowerCase();
+//     if (itemA < itemB){
+//       return -1 //false
+//     }
+//     if (itemA > itemB){
+//       return 1; //true
+//     }
+//   });
+// console.log(music);
+
+}); //sortBtn.change()
+
+
+
+
+    //function definition
+    function sortByAscending(dummySortType){
+      console.log(dummySortType);
+      music.sort(function(a,b){
+        // compare 2 consecutive objects' name property
+
+        switch (dummySortType){
+          case 'title':
+            console.log('title');
+            var itemA = a.title.toLowerCase(), itemB = b.title.toLowerCase();
+            break;
+          case 'artist' :
+            console.log('artist');
+            var itemA = a.artist.toLowerCase(), itemB = b.artist.toLowerCase();
+            break;
+          case 'genre':
+            console.log('genre');
+            var itemA = a.genre.toLowerCase(), itemB = b.genre.toLowerCase();
+            break;
+          default :
+            console.log('not matching');
+          }//switch
+
+          if (itemA < itemB){
+            return -1; //false
+          }
+          if (itemA > itemB){
+            return 1; //true
+          }
+
+        });//cats.sort()
+            console.log(music);
+            allMusic();
+
+      }//sortBySelection
+
+
+      //function definition
+      function sortByDescending(dummySortType){
+        console.log(dummySortType);
+        music.sort(function(a,b){
+          // compare 2 consecutive objects' name property
+
+          switch (dummySortType){
+            case 'titleza':
+              console.log('title');
+              var itemA = a.title.toLowerCase(), itemB = b.title.toLowerCase();
+              break;
+            case 'artistza' :
+              console.log('artist');
+              var itemA = a.artist.toLowerCase(), itemB = b.artist.toLowerCase();
+              break;
+            case 'genreza':
+              console.log('genre');
+              var itemA = a.genre.toLowerCase(), itemB = b.genre.toLowerCase();
+              break;
+            default :
+              console.log('not matching');
+            }//switch
+
+            if (itemA > itemB){
+              return -1; //false
+            }
+            if (itemA < itemB){
+              return 1; //true
+            }
+
+          });
+              console.log(music);
+              allMusic();
+
+        }//sortBySelection
+
+
 
 
 }); //document.ready()
