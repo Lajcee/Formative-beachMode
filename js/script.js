@@ -466,6 +466,10 @@ $('#sortBtn').change(function(){
 }); //sortBtn.change()
 
 
+// ==========================================================
+// Sort by alphabetical order
+// ==========================================================
+
 
 
     //function definition
@@ -498,7 +502,7 @@ $('#sortBtn').change(function(){
             return 1; //true
           }
 
-        });//cats.sort()
+        });
             console.log(music);
             allMusic();
 
@@ -540,6 +544,32 @@ $('#sortBtn').change(function(){
               allMusic();
 
         }//sortBySelection
+
+
+
+
+        $('#darkH1, #light').hide();
+
+
+  // $('#myBackground').addClass('lightClass');
+
+
+
+  $('#dark').click(function(){
+    $('#myBackground').addClass('black');
+    $('#dark').hide();
+    $('#light').show();
+    $('#darkH1').show();
+    $('#beachTitle').hide();
+    $('#waves').hide();
+  });
+  $('#light').click(function(){
+    $('#myBackground').addClass('waveWrapper');
+    $('#dark').show();
+    $('#darkH1').hide();
+    $('#beachTitle').show();
+    $('#waves').show();
+  });
 
 
 

@@ -9,16 +9,22 @@
     <link rel="stylesheet" href="css/style.css">
     <title>Formative 2.2</title>
   </head>
-  <body>
+  <body class="">
 
 
-    <main class="">
+
+      <main id="myBackground" class="">
+
+
+      <!-- <div id="darkContainer" class="bg-dark"> -->
 
       <nav>
         <!-- sort filter-->
-               <div class="col-12 col-sm-12 col-md-10 col-lg-3 col-xl-3 mt-4 text-center">
-                <select class="sortBtn bg-transparent" name="" id="sortBtn">
-                  <option value="">Sort by</option>
+               <div class="col-12 col-sm-12 col-md-10 col-lg-3 col-xl-3 pt-3  text-center">
+                 <button class="bg-transparent border-none mr-2 " id="dark"><i class="bg-transparent border-none text-dark fas fa-moon"></i></button>
+                 <button class="bg-transparent border-none mr-2 " id="light"><i class="bg-transparent border-none text-secondary fas fa-umbrella-beach"></i></button>
+                <select class="sortBtn text-primary bg-transparent"  id="sortBtn">
+                  <option class="" value="Sort by">Sort by</option>
                   <option value="title">Title A-Z</option>
                   <option value="artist">Artist A-Z</option>
                   <option value="genre">Genre A-Z</option>
@@ -32,35 +38,42 @@
       </nav>
 
 
-          <h1 class="text-primary mt-4 formGenre text-center display-3">Music Club.<img class="img"src="" alt=""> </h1>
+          <div id="beachTitle"><h1 class="text-primary mt-4 formGenre text-center display-3">MC</h1></div>
+          <div id="darkH1" class="text-primary mt-2 formGenre text-center display-3"><img class="mt-4 img" src="images/heading-ong.png" alt=""></h1></div>
+
+
+
+
           <button id="refresh" class="btn refresh-all p-1 mt-3 text-primary m-auto d-block" type="button" name="button">Refresh All</button>
+
           <div class="container h-100">
            <div class="d-flex justify-content-center h-100 mt-3 ">
              <div class="searchbar">
-               <input id="search" class="search_input bg-transparent text-primary " type="text" name="" placeholder="Search by keyword...">
-               <a id="keywords" href="#" class="search_icon text-primary p-2"><i class="fas fa-search"></i></a>
+               <input id="search" class="search_input h2 bg-transparent text-primary " type="text" placeholder="Search by keyword...">
+               <a id="keywords" href="#" class="search_icon text-primary h2"><i class="fas fa-search"></i></a>
              </div>
              </div>
 
+          </div>
 
 
 
          <!-- form input for filter - user's choice -->
-         <form class="row clearfix text-primary h4 my-3 " action="index.html" method="post">
+         <form class="row clearfix text-primary h4 my-3" action="index.html" method="post">
         <div class="col-6 col-sm-3 col-md-3 col-lg-3 col-xl-3 mb-3 formGenre text-center ">
-           <input class="" id="hiphop" type="checkbox" name="" value="checked">
+           <input class="" id="hiphop" type="checkbox"  value="checked">
            <label class="" for="hiphop">Hip-hop</label>
         </div>
         <div class="col-6 col-sm-3 col-md-3 col-lg-3 col-xl-3  mb-2 formGenre text-center ">
-           <input class="" id="rock" type="checkbox" name="" value="checked">
+           <input class="" id="rock" type="checkbox"  value="checked">
            <label class="" for="rock">Rock</label>
            </div>
         <div class="col-6 col-sm-3 col-md-3 col-lg-3 col-xl-3 mb-2 formGenre text-center ">
-           <input class="" id="indie" type="checkbox" name="" value="checked">
+           <input class="" id="indie" type="checkbox"  value="checked">
            <label class="" for="indie">Indie</label>
            </div>
         <div class="col-6 col-sm-3 col-md-3 col-lg-3 col-xl-3  mb-2 formGenre text-center ">
-           <input class="" id="rap" type="checkbox" name="" value="checked">
+           <input class="" id="rap" type="checkbox"  value="checked">
            <label class="" for="rap">Rap</label>
           </div>
 
@@ -68,11 +81,6 @@
            <button id="showChoice" class="btn filter formGenre bg-transparent text-primary m-auto d-block" type="button" name="button">filter genre</button>
 
            </form>
-          </div>
-
-      <!-- </div> -->
-
-
 
 
 
@@ -96,11 +104,14 @@
                  <span aria-hidden="true">&times;</span>
                </button>
              </div>
+
+
                <div class="modal-body">
                <div id="youtube" class="">
                </div>
              </div>
-             <button id="moreDetails'"type="button" class="btn btn-button bg-transparent" data-dismiss="modal">Close</button>
+
+             <button id="moreDetails'" type="button" class="btn btn-button bg-transparent" data-dismiss="modal">Close</button>
 
            </div>
          </div>
@@ -108,9 +119,12 @@
 
     </div> <!--col-->
 
-    <div class="waveWrapper waveAnimation">
+</main>
+    <div id="waves" class="waveWrapper waveAnimation">
       <div class="waveWrapperInner bgTop">
         <div class="wave waveTop" style="background-image: url('http://front-end-noobs.com/jecko/img/wave-top.png')"></div>
+
+
       </div>
       <div class="waveWrapperInner bgMiddle">
         <div class="wave waveMiddle" style="background-image: url('http://front-end-noobs.com/jecko/img/wave-mid.png')"></div>
@@ -120,14 +134,21 @@
       </div>
     </div>
 
-<footer id="sticky-footer" class=" page-footer ">
 
-</footer>
-
+<!-- </div> -->
 
 
 
-</main>
+
+
+
+
+
+
+
+
+
+
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->

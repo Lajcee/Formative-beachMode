@@ -1,11 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Prompt:wght@500;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;500&display=swap");
+.dark-mode {
+  background-color: #262326; }
+
 /*!
  * Bootstrap v4.5.3 (https://getbootstrap.com/)
  * Copyright 2011-2020 The Bootstrap Authors
  * Copyright 2011-2020 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
-@import url("https://fonts.googleapis.com/css2?family=Prompt:wght@500;700;800&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;500&display=swap");
 :root {
   --blue: #007bff;
   --indigo: #6610f2;
@@ -7840,6 +7843,15 @@ p {
 .formGenre {
   opacity: 80%; }
 
+.fas {
+  color: whitesmoke; }
+
+.black {
+  background-color: #262326; }
+
+.light {
+  background-image: linear-gradient(to top, #4DA0B0 20%, #D39D38 80%); }
+
 @keyframes move_wave {
   0% {
     transform: translateX(0) translateZ(0) scaleY(1); }
@@ -7909,8 +7921,5 @@ p {
 
 .waveAnimation .waveBottom {
   animation: move_wave 15s linear infinite; }
-
-.fas {
-  color: whitesmoke; }
 
 /*# sourceMappingURL=style.css.map */
