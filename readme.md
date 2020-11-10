@@ -15,7 +15,7 @@
 
 
 ## 1. Statement
-*use one statement per line*\
+*use one compound statement per line*\
 *Always end a statement with a semicolon.*\
 *Put the opening bracket at the end of the first line.*\
 *Use one space before the opening bracket.*\
@@ -60,66 +60,57 @@ var i = 0;
 
 
 #####  bad example
- for(i=0;i<gifts.length;i++)
-  {
+if(hour < 17) {  greeting = "Hello";  
+}
 
 
 
 #####  good example
-for(i = 0 ; i < gifts.length; i++) {
-
-
-
-### 6. CSS Style guide
-
-#### colors used
-*primary: whitesmoke*
-*secondary: #fc4445*
-*light: #F2527D*
-*dark: #262326*
-#### fonts used
-*font-family: Prompt*
-*h1 font weight: 800*
-*p font size: 10px*
+if (hour < 17) {  
+  greeting = "Hello";  
+}
 
 
 
 
-###7. Commas
+### 8. Commas
 
 
 #####  bad example
 var music = [
-{
-,id : 101
-,title : 'Issa Album'
-,artist : '21 Savage'
-}
+
+{  
+,id : 101  
+,title : 'Issa Album'  
+,artist : '21 Savage'  
+}  
+
 ]
 
 #####  good example
-var music = [
-{
-id : 101 ,
-title : 'Issa Album' ,
-artist : '21 Savage' ,
-}
+var music = [  
+
+{  
+id : 101 ,  
+title : 'Issa Album' ,  
+artist : '21 Savage' ,  
+}  
+
 ]
 
-
-###8. Semicolon
+### 8. Semicolon
 Semicolons should be used when there is a line break
 or end of a statement to avoid breaking the code. If one is
 not used, JS might misinterpret your code.
 
 #####  bad example
-if (rap === 'checked') {
-inputArray.push('rap')
-console.log(inputArray)
+if (rap === 'checked') {  
+inputArray.push('rap')  
+console.log(inputArray)  
 }
 
 #####  bad example
-if (rap === 'checked') {
-inputArray.push('rap') ;
-console.log(inputArray) ;
+if (rap === 'checked') {  
+inputArray.push('rap') ;  
+console.log(inputArray) ;  
 }

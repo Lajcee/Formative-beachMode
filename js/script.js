@@ -254,7 +254,7 @@ $('#refresh').click(function(){
     if (itemA > itemB){
       return 1;
     }
-    console.log(music);
+
 
   });
 
@@ -280,22 +280,22 @@ $('#showChoice').click(function(){
 
   if (rock === 'checked') {
         inputArray.push('rock');
-        console.log(inputArray);
+
   }
 
   if (rap === 'checked') {
         inputArray.push('rap');
-        console.log(inputArray);
+
   }
 
   if (hiphop === 'checked') {
         inputArray.push('hiphop');
-        console.log(inputArray);
+
   }
 
   if (indie === 'checked') {
         inputArray.push('indie');
-        console.log(inputArray);
+
   }
 
   filteredMusic(inputArray);
@@ -331,14 +331,10 @@ function allMusic(){
 
     $('.moreDetails').click(function() {
       $('#imageCover').text(' '); //clearing the content
-      console.log(this.id);
       var url = '';
       var i=0;
       for (i = 0; i < music.length; i++) {
-        console.log(parseInt(this.id), music[i].id);
         if (parseInt(this.id) === music[i].id) {
-          console.log(music[i].genre);
-          console.log(music[i].id,music[i].url);
             $('#exampleModalLabel').text(music[i].title);
             // append will keep  adding to existing content, so clear if you want
             // or else use html to replace existing content
@@ -370,7 +366,6 @@ function allMusic(){
 
 
 function filteredMusic(allMusic){
-  console.log(allMusic);
   var i,j;
   $('#result').text(' ');
   for(i = 0 ; i < music.length; i++) {
@@ -391,7 +386,7 @@ function filteredMusic(allMusic){
 
 function displayCards(j){
   //access properties of objects using index number
-  $('#result').append( '<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 mx-auto ">' +
+  $('#result').append( '<div class="col-xs-12 col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 mx-auto">' +
                           '<div class="card p-1 hover-rise mr-2 mx-auto text-primary bg-transparent " style="width: 18rem;">' +
                              '<img src="images/' + music[j].photo + '" class="card-img-top" alt="' + music[j].genre + '">' +
                              '<div class="card-body bg-transparent m-3>' +
@@ -412,14 +407,11 @@ function displayCards(j){
 $('#keywords').click(function(){
 $('#result').text('');
   var searchItem = $('#search').val();
-  console.log(searchItem);
   var i,j;
   for(i = 0 ; i < music.length; i++){
-    console.log(music[i].keywords.length);
     for (j = 0; j < music[i].keywords.length; j++){
-      console.log(((music[i].keywords[j]).toLowerCase()).includes(searchItem.toLowerCase()));
     if (((music[i].keywords[j]).toLowerCase()).includes(searchItem.toLowerCase()) ) {
-      console.log('true');
+
       displayCards(i);
       cardModal();
     }
@@ -436,7 +428,7 @@ $('#result').text('');
 $('#sortBtn').change(function(){
   $('input[type=checkbox]').prop('checked',false);
   var sortType = ($('#sortBtn').val()).toLowerCase();
-  console.log(sortType);
+
 
 
   if ((sortType === 'title') || (sortType === 'artist') || (sortType === 'genre')) {
@@ -449,21 +441,7 @@ $('#sortBtn').change(function(){
 
 
 
-
-//   // recursive function
-//   music.sort(function(){
-//     // compare 2 consecutive objects name property
-//     var itemA = a.name.toLowerCase(), itemB = b.name.toLowerCase();
-//     if (itemA < itemB){
-//       return -1 //false
-//     }
-//     if (itemA > itemB){
-//       return 1; //true
-//     }
-//   });
-// console.log(music);
-
-}); //sortBtn.change()
+});
 
 
 // ==========================================================
@@ -474,25 +452,20 @@ $('#sortBtn').change(function(){
 
     //function definition
     function sortByAscending(dummySortType){
-      console.log(dummySortType);
       music.sort(function(a,b){
         // compare 2 consecutive objects' name property
 
         switch (dummySortType){
           case 'title':
-            console.log('title');
             var itemA = a.title.toLowerCase(), itemB = b.title.toLowerCase();
             break;
           case 'artist' :
-            console.log('artist');
             var itemA = a.artist.toLowerCase(), itemB = b.artist.toLowerCase();
             break;
           case 'genre':
-            console.log('genre');
             var itemA = a.genre.toLowerCase(), itemB = b.genre.toLowerCase();
             break;
           default :
-            console.log('not matching');
           }//switch
 
           if (itemA < itemB){
@@ -503,7 +476,6 @@ $('#sortBtn').change(function(){
           }
 
         });
-            console.log(music);
             allMusic();
 
       }//sortBySelection
@@ -511,25 +483,21 @@ $('#sortBtn').change(function(){
 
       //function definition
       function sortByDescending(dummySortType){
-        console.log(dummySortType);
         music.sort(function(a,b){
           // compare 2 consecutive objects' name property
 
           switch (dummySortType){
             case 'titleza':
-              console.log('title');
               var itemA = a.title.toLowerCase(), itemB = b.title.toLowerCase();
               break;
             case 'artistza' :
-              console.log('artist');
               var itemA = a.artist.toLowerCase(), itemB = b.artist.toLowerCase();
               break;
             case 'genreza':
-              console.log('genre');
               var itemA = a.genre.toLowerCase(), itemB = b.genre.toLowerCase();
               break;
             default :
-              console.log('not matching');
+
             }//switch
 
             if (itemA > itemB){
@@ -540,7 +508,7 @@ $('#sortBtn').change(function(){
             }
 
           });
-              console.log(music);
+
               allMusic();
 
         }//sortBySelection
@@ -548,10 +516,9 @@ $('#sortBtn').change(function(){
 
 
 
-        $('#darkH1, #light').hide();
+//Show & hide Section
 
-
-  // $('#myBackground').addClass('lightClass');
+  $('#darkH1, #light').hide();
 
 
 
@@ -564,13 +531,14 @@ $('#sortBtn').change(function(){
     $('#waves').hide();
   });
   $('#light').click(function(){
-    $('#myBackground').addClass('waveWrapper');
+    $('#myBackground').addClass('light');
     $('#dark').show();
     $('#darkH1').hide();
     $('#beachTitle').show();
     $('#waves').show();
   });
 
+//Show & hide section end
 
 
 
